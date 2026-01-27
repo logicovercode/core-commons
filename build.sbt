@@ -2,7 +2,7 @@ name := "core-commons"
 
 version := "0.0.002"
 
-scalaVersion := "2.13.8"
+scalaVersion := "2.13.15"
 
 crossScalaVersions := Seq("2.13.15", "3.6.2")
 
@@ -43,10 +43,7 @@ val fSbtCommonsProject = project in file(".")
 
 lazy val dependencyCodeGenerator = (project in file("dependency-code-generator"))
   .settings(
-    // Define the Scala version for compile scope
-    scalaVersion := "2.13.8",
-    // Define the Scala version for test scope
-    Test / scalaVersion := "2.13.6",
+    scalaVersion := "2.13.15",
     Test / unmanagedSourceDirectories ++= List("generator").map(dir => (Test / baseDirectory).value / dir),
 
     Test / unmanagedSourceDirectories ++= List("generator-config").map(dir => (Test / baseDirectory).value / dir),
